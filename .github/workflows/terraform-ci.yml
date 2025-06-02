@@ -27,10 +27,13 @@ jobs:
         run: echo "Credenciais configuradas"
 
       - name: Inicializar Terraform
+        working-directory: infra
         run: terraform init
 
       - name: Validar configuração
+        working-directory: infra
         run: terraform validate
 
       - name: Executar plano
+        working-directory: infra
         run: terraform plan
