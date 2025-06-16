@@ -33,7 +33,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ~/todo-list
-            docker stop todo || true
-            docker rm todo || true
-            docker build -t todo-list:latest .
-            docker run -d --name todo -p 80:3000 todo-list
+            sudo docker stop todo || true
+            sudo docker rm todo || true
+            sudo docker build -t todo-list:latest .
+            sudo docker run -d --name todo -p 80:3000 todo-list
